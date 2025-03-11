@@ -1,0 +1,140 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  padding: 1rem;
+  display: flex;
+  background: var(--bg)
+}
+
+header {
+  width: 100%;
+  height: 4rem;
+  display: grid;
+  padding: 0.5rem;
+  align-items: center;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  animation: var(--card-enter);
+  justify-content: space-between;
+  grid-template-columns: 0.75fr 1.5fr 0.75fr;
+}
+.wins{
+  margin-left: 1rem;
+  text-align: left;
+}
+h3 {
+  margin: auto;
+  color: var(--text);
+}
+h4 {
+  margin: auto;
+  color: var(--title);
+}
+.new-game-btn{
+  margin-right: 1rem;
+  text-align: right;
+}
+button {
+  border: none;
+  outline: none;
+  padding: 0;
+  border-radius: 3px;
+  margin: auto;
+  background: none;
+}
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+  margin: 3rem auto;
+  grid-template-columns: repeat(4, auto);
+}
+
+.card {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  width: var(--card-width);
+  animation: var(--card-enter);
+  border-radius: var(--radius);
+}
+.card img {
+  width: var(--card-width);
+}
+.card-face,
+.card-back {
+  background: var(--card);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+.card-face {
+  position: absolute;
+  transform: var(--rotate-90);
+}
+.card-back {
+  transform: var(--rotate-0);
+  transition-delay: var(--delay);
+}
+.selected .card-face {
+  transform: var(--rotate-0);
+  transition-delay: var(--delay);
+}
+.selected .card-back {
+  transform: var(--rotate-90);
+  transition-delay: 0s;
+}
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  body {
+    align-items: center;
+  }
+
+  header {
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    position: fixed;
+    border-radius: 0;
+  }
+
+  .grid {
+    gap: 0.5rem;
+    margin: auto auto 3rem auto;
+  }
+
+  .card {
+    width: var(--card-width-mobile);
+  }
+
+  .card img {
+    width: var(--card-width-mobile);
+  }
+
+}
