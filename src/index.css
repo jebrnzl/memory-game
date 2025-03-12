@@ -22,8 +22,8 @@
   --radius: 0.75rem;
   --shadow: 1px 1px 13px #03030390;
 
-  --card-width: 142px;
-  --card-heigth: 190px;
+  --card-width: 12vh;
+  --card-width-tablet: 88.75px;
   --card-width-mobile: 71px;
   --card-enter: enter 600ms ease;
 
